@@ -1,0 +1,5 @@
+#!/bin/bash
+[[ -f ./setup ]] && source ./setup
+pushd /root > /dev/null
+    PHP=$(phpquery -V) /usr/sbin/php-fpm$(phpquery -V) -y /etc/php/$(phpquery -V)/fpm/php-fpm-www.conf -F
+popd
